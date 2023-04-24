@@ -1,1 +1,1 @@
-Для клонування репозиторію було використано команду: git clone https://github.com/nesadia/programming.git# rushbdontstop
+Для клонування репозиторію було використано команду: https://github.com/ra1de/rushbdontstop.git
