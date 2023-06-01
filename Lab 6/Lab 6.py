@@ -1,0 +1,29 @@
+Python 3.9.7 (tags/v3.9.7:1016ef3, Aug 30 2021, 20:19:38) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> import math
+
+def chysla(a, m, b):
+    E = (a + 4*m + b) / 6
+    SD = (b - a) / 6
+    return E, SD
+
+tasks = []
+while True:
+    a = float(input("Enter the 'a' number (or enter '0' to finish): "))
+    if a == 0:
+        break
+    m = float(input("Enter the 'm' number: "))
+    b = float(input("Enter the 'b' number: "))
+    tasks.append((a, m, b))
+
+E_tasks, SD_tasks = zip(*[chysla(*task) for task in tasks])
+
+E_project = sum(E_tasks)
+SD_project = math.sqrt(sum(sd**2 for sd in SD_tasks))
+
+CI_min = E_project - 2*SD_project
+CI_max = E_project + 2*SD_project
+
+print(f"Project's 95% confidence interval: {CI_min:.2f} ... {CI_max:.2f} points")
+SyntaxError: multiple statements found while compiling a single statement
+>>> 
